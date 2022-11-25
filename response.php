@@ -1,5 +1,7 @@
 <?php
-   $paragraph = $_GET("paragraph");
+   $paragraph = $_GET["paragraph"];
+
+   $paragraph_length = strlen(preg_replace('/\s+/', '', $paragraph)); 
 
 ?>
 <!DOCTYPE html>
@@ -13,6 +15,6 @@
 <body>
     
 
-    <p> <?php echo $paragraph ?></p>
+    <p> "<?php echo $paragraph ?>". La lunghezza del paragrafo è di <?php echo $paragraph_length ?> caratteri. </p>
 </body>
 </html>
