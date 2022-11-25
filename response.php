@@ -1,7 +1,11 @@
 <?php
    $paragraph = $_GET["paragraph"];
 
-   $paragraph_length = strlen(preg_replace('/\s+/', '', $paragraph)); 
+   $paragraph_length = strlen(preg_replace('/\s+/', '', $paragraph));
+   
+   $bad_word = $_GET["bad_word"];
+
+   $replaced_paragraph = str_replace($bad_word, '***', $paragraph);
 
 ?>
 <!DOCTYPE html>
@@ -16,5 +20,8 @@
     
 
     <p> "<?php echo $paragraph ?>". La lunghezza del paragrafo è di <?php echo $paragraph_length ?> caratteri. </p>
+
+    <p> "<?php echo $replaced_paragraph ?>". La lunghezza del paragrafo è di <?php echo strlen(preg_replace('/\s+/', '', $replaced_paragraph)) ?> caratteri. </p>
+
 </body>
 </html>
